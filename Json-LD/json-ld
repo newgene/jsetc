@@ -1,0 +1,65 @@
+{
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "name": "https: //identifiers.org/name",
+        "_id": "https: //identifiers.org/productID",
+        "symbol": "https: //identifiers.org/symbol",
+        "uniprot": "http://identifiers.org/uniprot/",
+        "Swiss-Prot": "https: //identifiers.org/Swiss-Prot",
+        "TrEMBL": {
+            "@id":"https: //identifiers.org/TrEMBL",
+            "@container":"@list"
+        },
+"entrezgene": {
+            "@id": "https: //identifiers.org/entrezgene",
+            "@type": "xsd:integer"
+        },
+"taxid": {
+            "@id": "https: //identifiers.org/taxid",
+            "@type": "xsd:integer"
+        }
+    },
+    "https: //identifiers.org/productID": "1017",
+    "https: //identifiers.org/name": "cyclin-dependent kinase 2",
+    "https: //identifiers.org/symbol": "CDK2",
+    "http://identifiers.org/uniprot/": {
+        "https: //identifiers.org/Swiss-Prot": "P24941",
+        "https: //identifiers.org/TrEMBL": [
+            "B4DDL9",
+            "E7ESI2",
+            "G3V317",
+            "G3V5T9"
+        ]
+    },
+"https: //identifiers.org/entrezgene": {"@type": "http://www.w3.org/2001/XMLSchema#integer","@value":1017},
+"https: //identifiers.org/taxid": {"@type": "http://www.w3.org/2001/XMLSchema#integer","@value":9606}
+}
+
+
+
+
+
+
+
+{
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "name": "https: //identifiers.org/name",
+        "_id": "https: //identifiers.org/productID",
+        "symbol": "https: //identifiers.org/symbol",
+        "uniprot": "http://identifiers.org/uniprot/",
+        "Swiss-Prot": "https: //identifiers.org/Swiss-Prot",
+        "TrEMBL": {
+            "@id":"https: //identifiers.org/TrEMBL",
+            "@container":"@list"
+        },
+"entrezgene": {
+            "@id": "https: //identifiers.org/entrezgene",
+            "@type": "xsd:integer"
+        },
+"taxid": {
+            "@id": "https: //identifiers.org/taxid",
+            "@type": "xsd:integer"
+        }
+    }
+}

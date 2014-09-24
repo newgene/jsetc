@@ -1,0 +1,45 @@
+import avro.schema
+from avro.datafile import DataFileReader, DataFileWriter
+from avro.io import DatumReader, DatumWriter
+import urllib2
+import json
+import os
+
+from pymongo import MongoClient
+client = MongoClient()
+
+schema = avro.schema.parse(open("user.avsc").read())
+
+writer = DataFileWriter(open("users.avro", "w"), DatumWriter(), schema)
+
+index=0
+db=client.xtb
+
+cur=db.gene.find()
+
+fd=open("error_id.txt","w")
+
+for item in cur:
+	index=index+1
+	if index>=100:
+		writer.close()
+		os.remove("users.avro")
+		writer = DataFileWriter(open("users.avro", "w"), DatumWriter(), schema)
+		index=0
+	try:
+		item["_timestamp"]=str(item["_timestamp"])
+		writer.append(item)
+	except Exception:
+		str="error_id: %s\n" % item["_id"]
+		fd.writelines(str)
+		fd.flush()
+print "====end===="
+writer.close()
+fd.close()
+
+
+#reader = DataFileReader(open("users.avro", "r"), DatumReader())
+#for user in reader:
+#    print user
+#reader.close()
+

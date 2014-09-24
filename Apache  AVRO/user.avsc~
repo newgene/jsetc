@@ -1,0 +1,262 @@
+{
+    "name": "gene",
+    "type": "record",
+    "fields": [
+        {
+            "name": "exons",
+            "type": ["null",{
+                "type": "map",
+                "values": [{
+                        "name": "exons_item",
+                        "type": "record",
+                        "fields": [
+                            {
+                                "name": "chr","type": "string"
+                            },
+                            {
+                                "name": "strand","type": "int"
+                            },
+                            {
+                                "name": "exons",
+                                "type": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "array",
+                                        "items": "int"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "txstart","type": "int"
+                            },
+                            {
+                                "name": "cdsstart","type": "int"
+                            },
+                            {
+                                "name": "cdsend","type": "int"
+                            },
+                            {
+                                "name": "txend","type": "int"
+                            }
+                        ]
+                },{"type":"array","items":"exons_item"}]
+            }]
+        },
+
+
+{"type":"string","name":"_id"},
+{"type":"string","name":"_timestamp"},
+
+
+{
+            "name": "accession",
+"type":["null",{"type":"record","name":"accession_item","fields":[
+{"name":"genomic","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"rna","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"protein","type":["null","string",{"type":"array","items":"string"}]}
+ ]}]
+        },
+
+
+{"type":["null",{"type":"array","items":"string"},"string"],"name":"alias"},
+
+
+{"name": "ensembl","type":["null", 
+{"type":"record","name":"ensembl_item","fields":[
+{"name":"protein","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"gene","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"transcript","type":["null","string",{"type":"array","items":"string"}]}
+]},
+{"type":"array","items":"ensembl_item"}
+]},
+
+{"type":["null","int"],"name":"entrezgene"},
+{
+            "name": "generif",
+            "type": ["null",
+            {"name": "generif_item","type": "record","fields": [{"name":"text","type":"string"},{"name":"pubmed","type":"string"}]},
+            {"type": "array","items":"generif_item" }]
+        },
+{"name":"genomic_pos","type":["null",{"type":"record","name":"genomic_pos_item","fields":[{"type":"int","name":"start"},{"name":"chr","type":"string"},{"name":"end","type":"int"},{"name":"strand","type":"int"}]},{"type":"array","items":"genomic_pos_item"}]},
+
+
+{
+"name":"go",
+"type":["null",
+{"type":"record","name":"go_item","fields":[
+
+{"name":"CC","type":["null",{"type":"record","name":"re_cc","fields":[
+{"name":"id","type":"string"},{"name":"term","type":"string"},
+{"name":"pubmed","type":["null","int",{"type":"array","items":"int"}]},
+{"name":"qualifier","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"evidence","type":["null","string",{"type":"array","items":"string"}]}
+]},
+{"type":"array","items":"re_cc"}
+]},
+{"name":"MF","type":["null",{"type":"record","name":"mf_cc","fields":[
+{"name":"id","type":"string"},{"name":"term","type":"string"},
+{"name":"pubmed","type":["null","int",{"type":"array","items":"int"}]},
+{"name":"qualifier","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"evidence","type":["null","string",{"type":"array","items":"string"}]}
+]},
+{"type":"array","items":"mf_cc"}
+]},
+{"name":"BP","type":["null",{"type":"record","name":"bp_cc","fields":[
+{"name":"id","type":"string"},{"name":"term","type":"string"},
+{"name":"pubmed","type":["null","int",{"type":"array","items":"int"}]},
+{"name":"qualifier","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"evidence","type":["null","string",{"type":"array","items":"string"}]}
+]},
+{"type":"array","items":"bp_cc"}
+]}
+
+]}
+]
+},
+
+
+{"type":["null","string",{"type":"array","items":"string"}],"name":"HGNC"},
+
+{
+            "name": "homologene",
+"type":["null",{"type":"record","name":"homologene_item","fields":
+[{"name":"id","type":"int"},{"name":"genes","type":{"type":"array","items":{"type":"array","items":"int"}} }]} ]
+ },
+
+{"type":["null","string",{"type":"array","items":"string"}],"name":"HPRD"},
+{
+            "name": "interpro",
+            "type":[ "null",{
+                    "name":"interpro_item",
+                    "type": "record",
+                    "fields": [
+                        {
+                            "name": "short_desc","type": "string"
+                            
+                        },
+                        {
+                            "name": "id","type": "string"
+                            
+                        },
+                        {
+                            "name": "desc","type": "string"
+                            
+                        }
+                    ]
+                },{
+                "type": "array",
+                "items":"interpro_item" }]
+        },
+
+{
+            "name": "ipi",
+            "type": ["null","string",{
+                "type": "array",
+                "items":"string"
+            }]
+        },
+{"name":"map_location","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"MIM","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"name","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"pharmgkb","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"prosite","type":["null","string",{"type":"array","items":"string"}]},
+
+{
+            "name": "reagent",
+            "type":["null", {
+                "type": "map",
+                "values": [
+                    {
+                        "name": "reagent_item",
+                        "type": "record",
+                        "fields": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "relationship",
+                                "type": "string"
+                            }
+                        ]
+                    },{"type": "array", "items": "reagent_item"}
+                ]
+            }]
+        },
+
+
+{
+            "name": "refseq",
+"type":["null",{"type":"record","name":"refseq_item","fields":[
+{"name":"genomic","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"rna","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"protein","type":["null","string",{"type":"array","items":"string"}]}
+ ]}]
+        },
+
+
+
+{
+            "name": "reporter",
+            "type": ["null",{
+                "type": "map",
+                "values":[ 
+                    {
+                       "type":"array",
+                        "items":"string"
+                    },"string"]
+                
+            }]
+        },
+{"name":"symbol","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"taxid","type":"int"},
+{"name":"type_of_gene","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"unigene","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"summary","type":["null","string",{"type":"array","items":"string"}]},
+
+{"name":"uniprot","type":["null",{"type":"record","name":"uniprot_item","fields":[{"name":"Swiss-Prot","type":["null","string",{"type":"array","items":"string"}]},{"name":"TrEMBL","type":["null","string",{"type":"array","items":"string"}] } ]}]},
+
+{"name":"Vega","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"retired","type":["null",{"type":"array","items":"int"},"int"]},
+{"name":"ec","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"pir","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"AnimalQTLdb","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"FLYBASE","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"MGI","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"RATMAP","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"RGD","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"TAIR","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"WormBase","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"Xenbase","type":["null","string"]},
+{"name":"ZFIN","type":["null","string",{"type":"array","items":"string"}]},
+{"name":"miRBase","type":["null","string"]},
+{"name":"pathway","type":["null",{"type":"map","values":[{"type":"record","name":"pathway_item","fields":[{"name":"name","type":"string"},{"name":"id","type":"string"}]},{"type":"array","items":"pathway_item"}]}]},
+{"name":"humancyc","type":["null",{"type":"map","values":"string"}]},
+{"name":"kegg","type":["null",{"type":"map","values":"string"}]},
+{"name":"mousecyc","type":["null",{"type":"map","values":"string"}]},
+{"name":"netpath","type":["null",{"type":"map","values":"string"}]},
+{"name":"pid","type":["null",{"type":"map","values":"string"}]},
+{"name":"reactome","type":["null",{"type":"map","values":"string"}]},
+{"name":"smpdb","type":["null",{"type":"map","values":"string"}]},
+{"name":"wikipathways","type":["null",{"type":"map","values":"string"}]},
+{"name":"yeastcyc","type":["null",{"type":"map","values":"string"}]},
+{"name":"pdb","type":["null","string",{"type":"array","items":"string"}]}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]
+}
